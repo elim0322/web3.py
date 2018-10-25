@@ -89,6 +89,9 @@ class PM(Module):
         """
         Deploys a new instance of a Registry.vy and sets that Registry to ``web3.pm``.
         (py-ethpm/ethpm/assets/vyper_registry/registry.v.py)
+
+        To tie your registry to an ENS name, use web3's ENS module, ie.
+        w3.ens.setup_address(ens_name, w3.pm.registry.address)
         """
         self.registry = Registry.deploy_new_instance(self.web3)
 
